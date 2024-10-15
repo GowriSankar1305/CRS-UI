@@ -1,0 +1,136 @@
+<app-customer-header></app-customer-header>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Choose date and time</h4>
+                </div>
+                <div class="card-body">
+                    <h5>Select pick up date and time</h5>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="mb-3">
+                                <div class="form-floating">
+                                    <select class="form-select form-select-sm" name="fromYear" id="fromYear" [(ngModel)]="fromYear" [disabled]="isElementDisabled">
+                                        <option value="">--- Choose ---</option>
+                                        <option *ngFor="let yr of years" [value]="yr">{{yr}}</option>
+                                    </select>
+                                    <label for="fromYear">Year</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="mb-3">
+                                <div class="form-floating">
+                                    <select class="form-select form-select-sm" name="fromMonth" id="fromMonth" [(ngModel)]="fromMonth" [disabled]="isElementDisabled">
+                                        <option value="">--- Choose ---</option>
+                                        <option *ngFor="let m of months" [value]="m">{{m}}</option>
+                                    </select>
+                                    <label for="fromMonth">Month</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="mb-3">
+                                <div class="form-floating">
+                                    <input type="text" pattern="[0-9]" class="form-control form-control-sm" name="fromDay" id="fromDay" placeholder="day" min="1" [(ngModel)]="fromDay" [disabled]="isElementDisabled">
+                                    <label for="fromDay">Day</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="mb-3">
+                                <div class="form-floating">
+                                    <input type="text" pattern="[0-9]" class="form-control form-control-sm" name="fromHour" id="fromHour" placeholder="hours" min="0" [(ngModel)]="fromHour" [disabled]="isElementDisabled">
+                                    <label for="fromHour">Hours(24 hr fmt)</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="mb-3">
+                                <div class="form-floating">
+                                    <input type="text" pattern="[0-9]" class="form-control form-control-sm" name="fromMin" id="fromMin" placeholder="mins" min="0" [(ngModel)]="fromMin" [disabled]="isElementDisabled">
+                                    <label for="fromMin">Minutes</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h5>Select return date and time</h5>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="mb-3">
+                                <div class="form-floating">
+                                    <select class="form-select form-select-sm" name="toYear" id="toYear" [(ngModel)]="toYear" [disabled]="isElementDisabled">
+                                        <option value="">--- Choose ---</option>
+                                        <option *ngFor="let yr of years" [value]="yr">{{yr}}</option>
+                                    </select>
+                                    <label for="toYear">Year</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="mb-3">
+                                <div class="form-floating">
+                                    <select class="form-select form-select-sm" name="toMonth" id="toMonth" [(ngModel)]="toMonth" [disabled]="isElementDisabled">
+                                        <option value="">--- Choose ---</option>
+                                        <option *ngFor="let m of months" [value]="m">{{m}}</option>
+                                    </select>
+                                    <label for="toMonth">Month</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="mb-3">
+                                <div class="form-floating">
+                                    <input type="text" pattern="[0-9]" class="form-control form-control-sm" name="toDay" id="toDay" placeholder="day" min="1" [(ngModel)]="toDay" [disabled]="isElementDisabled">
+                                    <label for="toDay">Day</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="mb-3">
+                                <div class="form-floating">
+                                    <input type="text" pattern="[0-9]" class="form-control form-control-sm" name="toHour" id="toHour" placeholder="hour" min="0" [(ngModel)]="toHour" [disabled]="isElementDisabled">
+                                    <label for="toHour">Hours(24 hr fmt)</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="mb-3">
+                                <div class="form-floating">
+                                    <input type="text" pattern="[0-9]" class="form-control form-control-sm" name="toMin" id="toMin" placeholder="mins" min="0" [(ngModel)]="toMin" [disabled]="isElementDisabled">
+                                    <label for="toMin">Minutes</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12 d-flex justify-content-center">
+                            <button type="button" class="btn btn-primary w-50" [innerHTML]="btnContent" [disabled]="isBtnDisabled" (click)="searchAvailableCars()"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-md-12 mb-3" *ngFor="let car of cars;let i = index">
+            <div class="card">
+                <img [src]="car.imageUrl" alt="car modle image" width="900px;" height="200px">
+                <div class="card-body">
+                  <h5 class="card-title">{{car.modelName}}</h5>
+                  <p class="card-text">Version&nbsp;&nbsp;{{car.version}}</p>
+                  <p class="card-text">No of doors&nbsp;&nbsp;{{car.noOfDoors}}</p>
+                  <p class="card-text">Seating capacity&nbsp;&nbsp;{{car.seatingCapacity}}</p>
+                  <p class="card-text">Fuel Tank Capacity&nbsp;&nbsp;{{car.fuelTankCapacity}}</p>
+                  <p class="card-text">Fuel Type&nbsp;&nbsp;{{car.fuelType}}</p>
+                  <p class="card-text">Transmission type&nbsp;&nbsp;{{car.transmissionType}}</p>
+                  <p class="card-text">Price per hour&nbsp;&nbsp;{{car.pricePerHour}}&#8377;</p>
+                  <p class="card-text">{{car.description}}</p>
+                  <button (click)="confirmBooking(car.carId,i)" class="btn btn-primary" [disabled]="clickedIndex === i">Book now</button>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>

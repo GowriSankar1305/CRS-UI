@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="login-container bg-white mt-5">
+      <h3 class="text-center">Admin Login</h3>
+        <div class="mb-3">
+          <label for="userName" class="form-label">Username</label>
+          <input type="text" class="form-control form-control-sm" id="userName" name="userName" [(ngModel)]="user.userName" placeholder="Enter your username">
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control form-control-sm" id="password" name="password" [(ngModel)]="user.password" placeholder="Enter your password">
+        </div>
+        <div class="mb-1">
+            <button type="button" class="btn btn-primary btn-sm w-100" [innerHTML]="btnContent" [disabled]="isBtnDisabled" (click)="loginAdmin()"></button>
+        </div>
+        <div class="mb-1">
+            <p class="text-success">Don't have an account?&nbsp;&nbsp;<a [routerLink]="['/admin/register']">Register</a></p>
+        </div>
+    </div>
+  </div>

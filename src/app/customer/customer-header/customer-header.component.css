@@ -1,0 +1,15 @@
+.header {
+    background-color: #142d4c;
+    color: #fff;
+    border-bottom: 1px solid #ececec;
+  }
+  .header .dropdown-menu {
+    background-color: #385170;
+    color: black;
+  }
+  .header .dropdown-menu a {
+    color: #f9f5f5;
+  }
+  .header .dropdown-menu a:hover {
+    background-color: #030000;
+  }

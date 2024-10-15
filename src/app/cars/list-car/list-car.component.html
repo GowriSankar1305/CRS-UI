@@ -1,0 +1,38 @@
+<app-admin-header></app-admin-header>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-bordered table-responsive">
+                <thead>
+                    <tr>
+                        <th>Car id</th>
+                        <th>Model name</th>
+                        <th>Version</th>
+                        <th>Seating capacity</th>
+                        <th>Tank capacity</th>
+                        <th>Fuel type</th>
+                        <th>Transmission type</th>
+                        <th>Price per hr</th>
+                        <th>Mileage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let car of cars">
+                        <td><a [routerLink]="['/admin/editCar']" [queryParams]="{carId: car.carId,imageId: car.imageId}" queryParamsHandling="merge">{{car.carId}}</a></td>
+                        <td>{{car.modelName}}</td>
+                        <td>{{car.version}}</td>
+                        <td>{{car.seatingCapacity}}&nbsp;No</td>
+                        <td>{{car.fuelTankCapacity}}&nbsp;Ltrs</td>
+                        <td>{{car.fuelType}}</td>
+                        <td>{{car.transmissionType}}</td>
+                        <td>{{car.pricePerHour}}&nbsp;&#8377;</td>
+                        <td>{{car.mileage}}&nbsp; Kms</td>
+                    </tr>
+                    <tr *ngIf="cars.length === 0">
+                        <td colspan="9" align="center">No cars added so far!</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,162 @@
+<div class="container">
+    <div class="login-container bg-white mt-5">
+        <h3 class="text-center">Customer regsitration</h3>
+        <h6>Customer information</h6>
+        <hr>
+        <div class="row mt-3">
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="firstName" class="form-label">First name</label>
+                    <input type="text" class="form-control form-control-sm" id="firstName" name="firstName" [(ngModel)]="newCustomer.firstName" placeholder="First name">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="firstName" class="form-label">Last name</label>
+                    <input type="text" class="form-control form-control-sm" id="lastname" name="lastname" [(ngModel)]="newCustomer.lastname" placeholder="Last name">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="mobileNo" class="form-label">Mobile number</label>
+                    <input type="text" class="form-control form-control-sm" name="mobileNo" id="mobileNo" [(ngModel)]="newCustomer.mobileNo" placeholder="Mobile number">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="emailId" class="form-label">Email id</label>
+                    <input type="text" class="form-control form-control-sm" id="emailId" name="emailId" [(ngModel)]="newCustomer.emailAddress" placeholder="Email address">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="mb-3">
+                    <label for="drivingLicenseNo" class="form-label">Driving license no</label>
+                    <input type="text" class="form-control form-control-sm" name="drivingLicenseNo" id="drivingLicenseNo" [(ngModel)]="newCustomer.drivingLicenseNo" placeholder="Driving license no">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="mb-3">
+                    <label for="licenseExpYear" class="form-label">License exp year</label>
+                    <input type="number" class="form-control form-control-sm" name="licenseExpYear" id="licenseExpYear" [(ngModel)]="licenseExpDate.year" placeholder="Year">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="mb-3">
+                    <label for="licenseExpMonth" class="form-label">License exp month</label>
+                    <input type="number" class="form-control form-control-sm" name="licenseExpMonth" id="licenseExpMonth" [(ngModel)]="licenseExpDate.month" placeholder="Month">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="mb-3">
+                    <label for="licenseExpDate" class="form-label">License exp day</label>
+                    <input type="number" class="form-control form-control-sm" name="licenseExpDate" id="licenseExpDate" [(ngModel)]="licenseExpDate.date" placeholder="Date">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="mb-3">
+                    <label for="year" class="form-label">Birth year</label>
+                    <input type="number" class="form-control form-control-sm" name="year" id="year" [(ngModel)]="dob.year" placeholder="Year">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="mb-3">
+                    <label for="month" class="form-label">Birth month</label>
+                    <input type="number" class="form-control form-control-sm" name="month" id="month" [(ngModel)]="dob.month" placeholder="Month">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="mb-3">
+                    <label for="date" class="form-label">Birth day</label>
+                    <input type="number" class="form-control form-control-sm" name="date" id="date" [(ngModel)]="dob.date" placeholder="Date">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="idProofType" class="form-label">Id proof type</label>
+                    <select class="form-select form-select-sm" id="idProofType" name="idProofType" [(ngModel)]="newCustomer.idProofType">
+                        <option value="">--- Choose ---</option>
+                        <option value="AADHAAR">AADHAAR</option>
+                        <option value="PAN_CARD">PAN_CARD</option>
+                        <option value="VOTER_ID">VOTER_ID</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="idProofNumber" class="form-label">Id proof number</label>
+                    <input type="text" class="form-control form-control-sm" name="idProofNumber" id="idProofNumber" [(ngModel)]="newCustomer.idProofNumber" placeholder="ID proof number">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="mb-3">
+                    <label for="userName" class="form-label">Username</label>
+                    <input type="text" class="form-control form-control-sm" name="userName" id="userName" [(ngModel)]="user.userName" placeholder="Enter username">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="mb-3">
+                    <label for="usPwd" class="form-label">Password</label>
+                    <input type="password" class="form-control form-control-sm" id="usPwd" name="usPwd" [(ngModel)]="user.password" placeholder="Enter password">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="mb-3">
+                    <label for="cnfPwd" class="form-label">Confirm password</label>
+                    <input type="password" class="form-control form-control-sm" id="cnfPwd" name="cnfPwd" [(ngModel)]="user.confirmPassword" placeholder="Confirm your password">
+                </div>
+            </div>
+        </div>
+        <h6>Address information</h6>
+        <hr>
+        <div class="row mt-3">
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="street" class="form-label">Street</label>
+                    <input type="text" class="form-control form-control-sm" id="street" name="street" placeholder="Street" [(ngModel)]="newAddress.street">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="city" class="form-label">City</label>
+                    <input type="text" class="form-control form-control-sm" id="city" name="city" placeholder="City" [(ngModel)]="newAddress.city">
+                </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="state" class="form-label">State</label>
+                    <input type="text" class="form-control form-control-sm" id="state" name="state" placeholder="State" [(ngModel)]="newAddress.state">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="zipCode" class="form-label">Zip code</label>
+                    <input type="text" class="form-control form-control-sm" id="zipCode" name="zipCode" placeholder="Zip code" [(ngModel)]="newAddress.zipCode">
+                </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+                <div class="mb-1">
+                    <button type="submit" class="btn btn-success btn-sm w-100" [disabled]="isBtnDisabled" [innerHTML]="btnContent" (click)="registerCustomer()"></button>
+                </div>
+            </div>
+            <div class="col-md-12 d-flex justify-content-center">
+                <div class="mb-1">
+                    <p class="text-success">Already have an account?&nbsp;&nbsp;<a [routerLink]="['/customer/login']">Login</a></p>
+                </div>
+            </div>
+          </div>
+    </div>
+</div>

@@ -1,0 +1,129 @@
+<app-admin-header></app-admin-header>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Add a new car to the system</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control from-control-sm" id="modelName" name="modelName" [(ngModel)]="newCar.modelName" placeholder="Car model name">
+                                    <label for="noOfDoors">Model name</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control from-control-sm" id="version" name="version" [(ngModel)]="newCar.version" placeholder="Car version">
+                                    <label for="noOfDoors">Version</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <div class="form-floating">
+                                    <input type="number" class="form-control from-control-sm" id="noOfDoors" name="noOfDoors" [(ngModel)]="newCar.noOfDoors" placeholder="No of doors">
+                                    <label for="noOfDoors">No of doors</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <div class="form-floating">
+                                    <select class="form-select form-select-sm" id="companyId" name="companyId" [(ngModel)]="newCar.companyId">
+                                        <option *ngFor="let brand of carCompanies" [value]="brand.companyId">{{brand.companyName}}</option>
+                                    </select>
+                                    <label for="companyId">Car brand</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <div class="form-floating">
+                                    <input type="number" class="form-control from-control-sm" id="fuelTankCapacity" name="fuelTankCapacity" [(ngModel)]="newCar.fuelTankCapacity" placeholder="Fuel tank capacity">
+                                    <label for="seatingCapacity">Fuel tank capacity</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control from-control-sm" id="seatingCapacity" name="seatingCapacity" [(ngModel)]="newCar.seatingCapacity" placeholder="Seating capacity">
+                                    <label for="seatingCapacity">Seating capacity</label> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <div class="form-floating">
+                                    <select class="form-select form-select-sm" id="fuelType" name="fuelType" [(ngModel)]="newCar.fuelType">
+                                        <option value="PETROL">PETROL</option>
+                                        <option value="DIESEL">DIESEL</option>
+                                        <option value="CNG">CNG</option>
+                                    </select>
+                                    <label for="fuelType">Fuel type</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <div class="form-floating">
+                                    <select class="form-select form-select-sm" id="transmissionType" name="transmissionType" [(ngModel)]="newCar.transmissionType">
+                                        <option value="MANUAL">MANUAL</option>
+                                        <option value="AUTOMATIC">AUTOMATIC</option>
+                                    </select>
+                                    <label for="transmissionType">Transmission type</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <div class="form-floating">
+                                    <input type="number" class="form-control from-control-sm" id="mileage" name="mileage" [(ngModel)]="newCar.mileage" placeholder="Mileage">
+                                    <label for="mileage">Mileage</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <div class="form-floating">
+                                    <input type="number" class="form-control from-control-sm" id="pricePerHour" name="pricePerHour" [(ngModel)]="newCar.pricePerHour">
+                                    <label for="pricePerHour">Price per hour</label>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <div class="form-floating">
+                                    <textarea class="form-control" placeholder="" id="description" name="description" [(ngModel)]="newCar.description"></textarea>
+                                    <label for="description">Car description</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 d-flex justify-content-center">
+                            <button type="button" class="btn btn-primary" [innerHTML]="btnContent" [disabled]="isBtnDisabled" (click)="addNewCar()"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
